@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: rssbot-elite-telegram
+    name: rssbot-elite
     env: docker
     plan: free
     dockerfilePath: ./Dockerfile
