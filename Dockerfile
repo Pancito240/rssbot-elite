@@ -1,11 +1,11 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apt-get update && apt-get install -y wget
+RUN apk add --no-cache wget
 
-RUN wget https://github.com/iovxw/rssbot/releases/latest/download/rssbot-amd64-linux -O /rssbot
+RUN wget https://github.com/iovxw/rssbot/releases/download/v2.0.0-alpha.12/rssbot-amd64-linux-musl -O /rssbot
 RUN chmod +x /rssbot
 
-RUN useradd -m rssuser
+RUN adduser -D rssuser
 USER rssuser
 WORKDIR /home/rssuser
 
